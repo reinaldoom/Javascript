@@ -1,4 +1,4 @@
-// Simulador de Precio de Productos
+// Funcion Precio de Productos con o sin Descuento
 const precioProducto = () => {
     let precioUnitario = 0;
     let cantidadProductos = 0;
@@ -6,15 +6,19 @@ const precioProducto = () => {
     // Validar la entrada del usuario
     while (precioUnitario <= 0 || isNaN(precioUnitario)) {
       precioUnitario = parseFloat(prompt("Ingrese el precio unitario del producto:"));
-      if (precioUnitario <= 0 || isNaN(precioUnitario)) {
-        console.log("¡El precio unitario debe ser un número mayor a cero!");
+      if (isNaN(precioUnitario)) {
+        console.log("Debe ingresar un número válido mayor a 0 y NO una letra o espacio en blanco");
+      } else if (precioUnitario <= 0) {
+        console.log("El precio unitario debe ser un número mayor a cero");
       }
     }
   
     while (cantidadProductos <= 0 || isNaN(cantidadProductos)) {
       cantidadProductos = parseInt(prompt("Ingrese la cantidad de productos que desea comprar:"));
-      if (cantidadProductos <= 0 || isNaN(cantidadProductos)) {
-        console.log("¡La cantidad de productos debe ser un número entero mayor a cero!");
+      if (isNaN(cantidadProductos)) {
+        console.log("Debe ingresar un número válido mayor a 0 y NO una letra o espacio en blanco");
+      } else if (cantidadProductos <= 0) {
+        console.log("La cantidad de productos debe ser un número entero mayor a cero");
       }
     }
   
