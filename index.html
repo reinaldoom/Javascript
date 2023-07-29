@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link del css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>2da Pre-Entrega</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>2da Pre-Entrega</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main -->
+    <div class="container">
+        <h1>Precio de Productos con o sin Descuento</h1>
+        <div class="form-container">
+            <label for="numeroProductos">Número de productos a agregar:</label>
+            <input type="number" id="numeroProductos" min="1">
+
+            <label for="nombreProducto">Nombre del producto:</label>
+            <input type="text" id="nombreProducto">
+
+            <label for="precio">Precio unitario del producto:</label>
+            <input type="number" id="precio" min="0" step="0.01">
+
+            <label for="cantidad">Cantidad de productos:</label>
+            <input type="number" id="cantidad" min="1">
+
+            <button id="agregarBtn">Agregar Producto</button>
+
+            <label for="nombreBuscado">Buscar producto por nombre:</label>
+            <input type="text" id="nombreBuscado">
+
+            <button id="buscarBtn">Buscar Producto</button>
+        </div>
+
+        <div class="resultados">
+            <h2>Resultados:</h2>
+            <div id="productosList"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Derechos de autor © 2023 - Todos los derechos reservados - Reinaldo Omaña</p>
+    </footer>
+    <!-- link del javascript -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
