@@ -9,11 +9,13 @@ class Producto {
     calcularPrecioTotal() {
         const precioTotal = this.precioUnitario * this.cantidad;
         let descuento = 0;
+
         if (precioTotal >= 100 && precioTotal < 500) {
             descuento = precioTotal * 0.1; // Descuento del 10%
         } else if (precioTotal >= 500) {
             descuento = precioTotal * 0.2; // Descuento del 20%
         }
+
         return {
             precioTotal: precioTotal - descuento,
             descuento: descuento,
@@ -67,7 +69,9 @@ const agregarProductos = () => {
             if (isNaN(cantidadProductos)) {
                 console.log("Debe ingresar un número válido mayor a 0");
             } else if (cantidadProductos <= 0) {
-                console.log("La cantidad de productos debe ser un número entero mayor a cero");
+                console.log(
+                    "La cantidad de productos debe ser un número entero mayor a cero"
+                );
             }
         }
 
@@ -114,7 +118,7 @@ if (productosEncontrados.length > 0) {
     console.log("No se encontraron productos con ese nombre.");
 }
 
-// Mostrar los productos en la consola y calcular el total a pagar con descuento (Método forEach)
+// Método forEach para mostrar los productos en la consola y calcular el total a pagar con descuento
 let totalPagarSinDescuento = 0;
 let totalDescuento = 0;
 let totalPagarConDescuento = 0;
@@ -122,15 +126,12 @@ let totalPagarConDescuento = 0;
 console.log("Productos agregados:");
 productosAgregados.forEach((producto, index) => {
     const { precioTotal, descuento } = producto.calcularPrecioTotal();
-    console.log(
-        `Producto ${index + 1}: ${producto.nombre}, Precio unitario: $${producto.precioUnitario}, Cantidad: ${producto.cantidad}`
-    );
+    console.log(`Producto ${index + 1}: ${producto.nombre}, Precio unitario: $${producto.precioUnitario}, Cantidad: ${producto.cantidad}`);
     console.log(`Descuento aplicado: $${descuento.toFixed(2)}`);
     totalPagarSinDescuento += producto.precioUnitario * producto.cantidad;
     totalDescuento += descuento;
     totalPagarConDescuento += precioTotal;
-}
-);
+});
 
 console.log(`Total de todos los productos sin descuento: $${totalPagarSinDescuento.toFixed(2)}`);
 console.log(`Descuento total de todos los productos: $${totalDescuento.toFixed(2)}`);
